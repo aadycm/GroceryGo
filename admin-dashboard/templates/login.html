@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FreshMart Admin - Login</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <h1>FreshMart Admin</h1>
+      <p>Sign in with your staff account</p>
+      <div id="loginError" class="error-banner" style="display:none"></div>
+      <form id="loginForm">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="email" required value="owner@freshmart.test" />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="password" required value="Owner@12345" />
+        </div>
+        <button class="btn" type="submit" style="width:100%">Sign in</button>
+      </form>
+      <p class="hint">Demo: owner@freshmart.test / Owner@12345 (Owner), auditor@freshmart.test / Auditor@12345 (Auditor), staff@freshmart.test / Staff@12345 (Staff)</p>
+    </div>
+  </div>
+  <script src="/static/js/dashboard.js"></script>
+  <script>GroceryGoAdmin.initLogin();</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}FreshMart Admin{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><img id="sidebarLogo" src="" alt="" style="display:none" /><span id="sidebarAppName">FreshMart</span></div>
+      <nav>
+        <a href="/admin/dashboard" data-page="dashboard">Dashboard</a>
+        <a href="/admin/inventory" data-page="inventory">Inventory</a>
+        <a href="/admin/customers" data-page="customers">Customers</a>
+        <a href="/admin/orders" data-page="orders">Orders</a>
+        <a href="/admin/reports" data-page="reports">Reports</a>
+        <a href="/admin/payments" data-page="payments">Payments</a>
+        <a href="/admin/branding" data-page="branding">Branding</a>
+        <a href="/admin/theme" data-page="theme">Theme</a>
+        <a href="/admin/subscriptions" data-page="subscriptions">Subscriptions</a>
+        <a href="/admin/analytics" data-page="analytics">Analytics</a>
+        <a href="/admin/settings" data-page="settings">Settings</a>
+      </nav>
+    </aside>
+    <div class="main">
+      <div class="topbar">
+        <div class="page-title">{% block page_title %}{% endblock %}</div>
+        <div class="user-menu">
+          <span id="currentUserLabel"></span>
+          <button class="btn btn-secondary btn-sm" id="logoutBtn">Log out</button>
+        </div>
+      </div>
+      <div class="content">
+        <div id="errorBanner" class="error-banner" style="display:none"></div>
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/dashboard.js"></script>
+  <script>
+    GroceryGoAdmin.initShell("{{ active_page }}");
+    {% block page_script %}{% endblock %}
+  </script>
+</body>
+</html>

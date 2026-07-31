@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Backend runtime artifacts
+backend/dev.db
+backend/dev.db-journal
+backend/uploads/**/*.png
+backend/uploads/**/*.pdf
+backend/uploads/**/*.xlsx
+!backend/uploads/.gitkeep
+
+# Env files (never commit real secrets)
+.env
+backend/.env
+customer-app/.env
+
+# Node / frontend
+customer-app/node_modules/
+customer-app/dist/
+
+# Editors / OS
+.DS_Store
+.vscode/
+.claude/

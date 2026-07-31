@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "gunicorn -w 4 -b 0.0.0.0:$PORT wsgi:application",
+    "startCommand": "flask db upgrade && gunicorn -w 4 -b 0.0.0.0:$PORT wsgi:application",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 3
   }
